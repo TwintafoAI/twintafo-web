@@ -127,16 +127,21 @@ export default function Home() {
       <header className="fixed left-0 top-0 z-50 w-full border-b border-emerald-100/10 bg-black/40 backdrop-blur">
         <Container>
           <div className="flex items-center justify-between py-4">
-            <div className="flex items-center gap-3">
-              <Image
-                src="/twintafo-logo.png"
-                alt="Twintafo AI logo"
-                width={140}
-                height={36}
-                priority
-              />
-              <span className="hidden text-xs uppercase tracking-[0.4em] text-emerald-200/60 md:inline">
-                Twintafo AI
+            <div className="flex items-center gap-2">
+              <div className="relative -ml-1 h-20 w-24">
+                <Image
+                  src="/twintafo-logo.png"
+                  alt="Twintafo AI logo"
+                  fill
+                  sizes="96px"
+                  priority
+                  className="object-contain object-left [filter:brightness(0.92)_saturate(0.85)_hue-rotate(6deg)]"
+                />
+                <div className="logo-gradient-mask absolute inset-0" aria-hidden="true" />
+              </div>
+              <span className="hidden text-xl uppercase tracking-[0.35em] text-emerald-100/70 md:inline">
+                <span className="text-white/85">Twintafo</span>{" "}
+                <span className="text-ai-gradient">AI</span>
               </span>
             </div>
             <div className="hidden items-center gap-3 md:flex">

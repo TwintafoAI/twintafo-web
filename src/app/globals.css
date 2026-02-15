@@ -60,6 +60,33 @@ body {
     background: linear-gradient(90deg, transparent, rgba(53, 243, 164, 0.6), transparent);
   }
 
+  .logo-gradient-mask {
+    background: linear-gradient(
+      90deg,
+      rgba(8, 42, 30, 1),
+      rgba(18, 86, 60, 0.98),
+      rgba(54, 166, 112, 0.95),
+      rgba(120, 230, 180, 0.98)
+    );
+    mix-blend-mode: screen;
+    opacity: 0.75;
+    -webkit-mask-image: url("/twintafo-logo.png");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    -webkit-mask-position: left center;
+    mask-image: url("/twintafo-logo.png");
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: left center;
+  }
+
+  .text-ai-gradient {
+    background: linear-gradient(120deg, #8ff3d8 0%, #37f3a5 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
   .twin-band {
     opacity: 0.55;
   }
