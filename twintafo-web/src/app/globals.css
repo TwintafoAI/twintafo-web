@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050807;
+  --foreground: #e6f0ea;
+  --muted: #a5b7af;
+  --emerald: #35f3a4;
+  --emerald-soft: #1bd28d;
+  --panel: rgba(10, 16, 13, 0.82);
+  --border: rgba(128, 165, 146, 0.2);
+  --glow: rgba(53, 243, 164, 0.18);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer utilities {
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(78, 110, 96, 0.18) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(78, 110, 96, 0.18) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(circle at top, black 45%, transparent 70%);
+  }
+
+  .text-gradient {
+    background: linear-gradient(120deg, #e7f5ee 0%, #7ff0c2 45%, #37f3a5 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .panel-glow {
+    box-shadow: 0 0 24px rgba(53, 243, 164, 0.12);
+  }
+
+  .signal-line {
+    background: linear-gradient(90deg, transparent, rgba(53, 243, 164, 0.6), transparent);
+  }
+}
