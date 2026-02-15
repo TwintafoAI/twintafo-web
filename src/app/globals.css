@@ -60,6 +60,20 @@ body {
     background: linear-gradient(90deg, transparent, rgba(53, 243, 164, 0.6), transparent);
   }
 
+  .timeline-line {
+    background: linear-gradient(
+      180deg,
+      rgba(53, 243, 164, 0.18),
+      rgba(53, 243, 164, 0.7),
+      rgba(53, 243, 164, 0.18)
+    );
+  }
+
+  .timeline-dot {
+    background: rgba(53, 243, 164, 0.9);
+    box-shadow: 0 0 0 4px rgba(53, 243, 164, 0.12);
+  }
+
   .logo-gradient-mask {
     background: linear-gradient(
       90deg,

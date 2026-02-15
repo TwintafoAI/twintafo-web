@@ -31,7 +31,7 @@ export function SectionHeading({
       </h2>
       {description ? (
         <p
-          className={`max-w-2xl text-base leading-relaxed text-emerald-100/70 sm:text-lg ${
+          className={`max-w-xl text-base leading-relaxed text-emerald-100/70 sm:text-lg ${
             descriptionClassName ?? ""
           }`}
         >
