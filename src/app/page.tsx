@@ -186,24 +186,95 @@ export default function Home() {
                   </p>
                 </div>
               </Reveal>
-              <Reveal className="hidden lg:block" delay={0.2}>
-                <div className="relative rounded-3xl border border-emerald-200/15 bg-emerald-950/40 p-8 backdrop-blur panel-glow">
+              <Reveal className="order-last lg:order-none" delay={0.2}>
+                <div className="relative rounded-3xl border border-emerald-200/15 bg-emerald-950/40 p-6 backdrop-blur panel-glow sm:p-8">
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-emerald-400/10 via-transparent to-emerald-500/10" />
+                  <div className="absolute inset-0 rounded-3xl bg-grid opacity-30" />
                   <div className="absolute -right-10 -top-10 h-24 w-24 rounded-full bg-emerald-300/20 blur-2xl" />
-                  <div className="space-y-6">
-                    <div className="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-emerald-200/70">
-                      <span>Signal Console</span>
-                      <span className="rounded-full border border-emerald-200/20 px-3 py-1">
+                  <div className="relative z-10 space-y-6">
+                    <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.3em] text-emerald-200/70">
+                      <span>Digital Twin Simulation</span>
+                      <span className="rounded-full border border-emerald-200/20 px-3 py-1 text-[10px]">
                         Live
                       </span>
                     </div>
-                    <div className="space-y-3">
-                      <div className="h-2 w-3/4 rounded-full bg-emerald-200/30" />
-                      <div className="h-2 w-2/3 rounded-full bg-emerald-200/20" />
-                      <div className="h-2 w-1/2 rounded-full bg-emerald-200/10" />
+                    <div className="relative">
+                      <div className="absolute left-4 top-6 hidden text-[10px] uppercase tracking-[0.3em] text-emerald-200/60 sm:block">
+                        Observed
+                      </div>
+                      <div className="absolute right-6 top-6 hidden text-[10px] uppercase tracking-[0.3em] text-emerald-200/60 sm:block">
+                        Simulated
+                      </div>
+                      <div className="absolute inset-x-6 top-1/2 h-px bg-emerald-200/15" />
+                      <div className="absolute left-6 top-10 h-32 w-px bg-emerald-200/15" />
+                      <div className="scan-line absolute inset-x-6 top-6 h-px" />
+                      <svg
+                        viewBox="0 0 520 260"
+                        className="h-52 w-full sm:h-64"
+                        role="img"
+                        aria-label="Mirrored outcome curves comparing observed patients and simulated digital twins"
+                      >
+                        <defs>
+                          <linearGradient id="twinGradient" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stopColor="#7ff0c2" stopOpacity="0.85" />
+                            <stop offset="100%" stopColor="#35f3a4" stopOpacity="0.4" />
+                          </linearGradient>
+                          <linearGradient id="bandGradient" x1="0" y1="0" x2="1" y2="0">
+                            <stop offset="0%" stopColor="#2d5a46" stopOpacity="0.45" />
+                            <stop offset="100%" stopColor="#2d5a46" stopOpacity="0.05" />
+                          </linearGradient>
+                          <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="6" result="blur" />
+                            <feMerge>
+                              <feMergeNode in="blur" />
+                              <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                          </filter>
+                        </defs>
+                        <path
+                          className="twin-band"
+                          d="M30 220 C110 205 170 150 230 125 C290 100 350 85 420 80 C460 78 490 70 500 60 L500 95 C480 102 450 110 420 118 C350 135 300 150 230 175 C170 195 110 215 30 230 Z"
+                          fill="url(#bandGradient)"
+                        />
+                        <path
+                          className="twin-path twin-path--observed"
+                          d="M30 210 C120 190 160 130 220 110 C280 90 330 80 410 70 C450 65 480 60 500 45"
+                          fill="none"
+                          stroke="rgba(127, 240, 194, 0.55)"
+                          strokeWidth="3"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          filter="url(#softGlow)"
+                        />
+                        <path
+                          className="twin-path twin-path--sim"
+                          d="M30 220 C110 205 170 150 230 125 C290 100 350 85 420 80 C460 78 490 70 500 60"
+                          fill="none"
+                          stroke="url(#twinGradient)"
+                          strokeWidth="3"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          filter="url(#softGlow)"
+                        />
+                        <circle className="pulse-dot" cx="210" cy="132" r="4" fill="#7ff0c2" />
+                        <circle className="pulse-dot pulse-dot--delay" cx="350" cy="92" r="3.5" fill="#35f3a4" />
+                        <circle className="pulse-dot pulse-dot--delay-2" cx="460" cy="74" r="3" fill="#9af6d4" />
+                      </svg>
+                      <div className="mt-3 flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-[0.3em] text-emerald-200/60">
+                        <span className="rounded-full border border-emerald-200/20 px-3 py-1">
+                          Calibrated
+                        </span>
+                        <span className="rounded-full border border-emerald-200/20 px-3 py-1">
+                          Confidence band
+                        </span>
+                        <span className="rounded-full border border-emerald-200/20 px-3 py-1">
+                          Forecast
+                        </span>
+                      </div>
                     </div>
                     <div className="rounded-2xl border border-emerald-200/10 bg-black/40 p-4 text-sm text-emerald-100/70">
-                      Trial simulations run faster than enrollment. Explore design
-                      decisions before committing capital.
+                      Compare observed cohorts against simulated digital twins to
+                      stress-test outcomes before enrollment.
                     </div>
                   </div>
                 </div>
