@@ -404,26 +404,26 @@ export default function Home() {
                 description="A structured flow from assumptions to digital twins to actionable diagnostics."
               />
             </Reveal>
-            <div className="relative mt-12 space-y-8">
+            <div className="relative mt-12 grid gap-10 md:grid-cols-3">
               <div
-                className="timeline-line absolute left-4 top-2 hidden h-[calc(100%-16px)] w-px md:block"
+                className="absolute left-0 right-6 top-3 hidden h-px bg-emerald-300/40 md:block"
                 aria-hidden="true"
               />
               {steps.map((step, index) => (
                 <Reveal key={step.title} delay={index * 0.12}>
-                  <div className="relative pl-10 md:pl-12">
-                    <span className="timeline-dot absolute left-3 top-2 h-3 w-3 rounded-full" />
-                    <div className="flex flex-wrap items-center gap-3">
-                      <span className="rounded-full border border-emerald-200/20 px-3 py-1 text-xs uppercase tracking-[0.3em] text-emerald-200/70">
+                  <div className="relative">
+                    <span className="timeline-dot absolute left-6 top-3 hidden h-3 w-3 -translate-y-1/2 rounded-full md:block" />
+                    <div className="pt-10 space-y-3">
+                      <span className="inline-flex rounded-full border border-emerald-200/20 px-3 py-1 text-xs uppercase tracking-[0.3em] text-emerald-200/70">
                         Step {index + 1}
                       </span>
                       <h3 className="text-xl font-semibold text-white">
                         {step.title}
                       </h3>
+                      <p className="text-sm leading-relaxed text-emerald-100/70">
+                        {step.description}
+                      </p>
                     </div>
-                    <p className="mt-3 text-sm leading-relaxed text-emerald-100/70">
-                      {step.description}
-                    </p>
                   </div>
                 </Reveal>
               ))}

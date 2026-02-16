@@ -300,21 +300,34 @@ export default function Home() {
                 description="A structured flow from assumptions to digital twins to actionable diagnostics."
               />
             </Reveal>
-            <div className="relative mt-12 grid gap-6 md:grid-cols-3">
-              <div className="absolute left-10 right-10 top-1/2 hidden h-px -translate-y-1/2 bg-emerald-200/20 md:block" />
-              {steps.map((step, index) => (
-                <Reveal key={step.title} delay={index * 0.12} className="relative">
-                  <div className="rounded-2xl border border-emerald-100/10 bg-black/30 p-6 backdrop-blur">
-                    <p className="text-xs uppercase tracking-[0.3em] text-emerald-200/70">
-                      Step {index + 1}
-                    </p>
-                    <h3 className="mt-3 text-lg font-semibold text-white">{step.title}</h3>
-                    <p className="mt-3 text-sm leading-relaxed text-emerald-100/70">
-                      {step.description}
-                    </p>
+            <div className="relative mt-12">
+              <div className="absolute left-0 right-0 top-0 hidden md:block">
+                <div className="relative h-24">
+                  <div className="absolute left-[16.5%] right-[16.5%] top-3 h-px bg-emerald-200/20" />
+                  <div className="grid h-full grid-cols-3">
+                    {steps.map((step, index) => (
+                      <div key={step.title} className="relative flex flex-col items-center pt-12">
+                        <span className="absolute top-3 h-3 w-3 rounded-full bg-emerald-300 shadow-[0_0_12px_rgba(110,231,183,0.45)]" />
+                        <span className="rounded-full border border-emerald-200/20 bg-emerald-950/70 px-3 py-1 text-[10px] uppercase tracking-[0.25em] text-emerald-200/70">
+                          Step {index + 1}
+                        </span>
+                      </div>
+                    ))}
                   </div>
-                </Reveal>
-              ))}
+                </div>
+              </div>
+              <div className="grid gap-6 md:grid-cols-3 md:pt-12">
+                {steps.map((step, index) => (
+                  <Reveal key={step.title} delay={index * 0.12} className="relative">
+                    <div className="rounded-2xl border border-emerald-100/10 bg-black/30 p-6 backdrop-blur">
+                      <h3 className="text-lg font-semibold text-white">{step.title}</h3>
+                      <p className="mt-3 text-sm leading-relaxed text-emerald-100/70">
+                        {step.description}
+                      </p>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
             </div>
           </Container>
         </section>
