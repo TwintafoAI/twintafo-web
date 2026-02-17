@@ -12,36 +12,38 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://twintafoai.com";
+const canonicalUrl = "https://www.twintafoai.com";
+const ogImageUrl = `${canonicalUrl}/og-image.png`;
 
 export const metadata: Metadata = {
   title: "Twintafo AI | Digital twins for oncology trials",
   description:
     "Twintafo AI builds AI-powered digital twins for oncology trials to simulate outcomes, test trial designs, and quantify risk before real-world enrollment.",
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(canonicalUrl),
+  alternates: { canonical: canonicalUrl },
   openGraph: {
-    title: "Twintafo AI | Digital Twins for Oncology Trials",
+    title: "Twintafo AI",
     description:
       "AI-powered digital twins for oncology trials. Curing cancer starts with better trials.",
-    url: siteUrl,
+    url: canonicalUrl,
     siteName: "Twintafo AI",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Twintafo AI | Digital Twins for Oncology Trials",
+        url: ogImageUrl,
+        width: 1536,
+        height: 1024,
+        alt: "Twintafo AI",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Twintafo AI | Digital Twins for Oncology Trials",
+    title: "Twintafo AI",
     description:
       "AI-powered digital twins for oncology trials. Curing cancer starts with better trials.",
-    images: ["/og-image.png"],
+    images: [ogImageUrl],
   },
 };
 
