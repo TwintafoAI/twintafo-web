@@ -172,8 +172,8 @@ export default async function Home({ searchParams }: HomeProps) {
               <a href="#contact" className={primaryCtaClasses}>
                 Request a call
               </a>
-              <a href="mailto:hello@twintafoai.com" className={secondaryCtaClasses}>
-                Email us
+              <a href="#contact" className={secondaryCtaClasses}>
+                Contact us
               </a>
             </div>
           </div>
@@ -206,8 +206,8 @@ export default async function Home({ searchParams }: HomeProps) {
                     <a href="#contact" className={primaryCtaClasses}>
                       Request a call
                     </a>
-                    <a href="mailto:hello@twintafoai.com" className={secondaryCtaClasses}>
-                      Email us
+                    <a href="#contact" className={secondaryCtaClasses}>
+                      Contact us
                     </a>
                   </div>
                   <p className="text-xs text-emerald-100/50">
@@ -589,11 +589,8 @@ export default async function Home({ searchParams }: HomeProps) {
                   <a href="#contact" className={primaryCtaClasses}>
                     Request a call
                   </a>
-                  <a
-                    href="mailto:hello@twintafoai.com"
-                    className={secondaryCtaClasses}
-                  >
-                    Email us
+                  <a href="#contact" className={secondaryCtaClasses}>
+                    Contact us
                   </a>
                 </div>
               </div>
