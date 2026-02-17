@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 type SectionHeadingProps = {
   eyebrow?: string;
   title: string | ReactNode;
-  description?: string;
+  description?: string | ReactNode;
   align?: "left" | "center";
   className?: string;
   descriptionClassName?: string;

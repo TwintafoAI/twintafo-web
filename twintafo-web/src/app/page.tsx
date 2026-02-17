@@ -220,16 +220,8 @@ export default function Home() {
                   <SectionHeading
                     eyebrow="The problem"
                     title="Why oncology trials stall"
-                    description={
-                      <>
-                        Traditional trials carry high uncertainty, slow recruitment,
-                        <br />
-                        <span className="whitespace-nowrap">
-                          and hard-to-control variability.
-                        </span>
-                      </>
-                    }
-                    descriptionClassName="max-w-none"
+                    description="Traditional trials carry high uncertainty, slow recruitment,\nand hard-to-control variability."
+                    descriptionClassName="max-w-none whitespace-pre-line"
                   />
                   <div className="space-y-4 text-sm leading-relaxed text-emerald-100/70 sm:text-base">
                     <p>

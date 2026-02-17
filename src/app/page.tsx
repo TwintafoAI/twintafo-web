@@ -320,16 +320,8 @@ export default async function Home({ searchParams }: HomeProps) {
                   <SectionHeading
                     eyebrow="The problem"
                     title="Why oncology trials stall"
-                    description={
-                      <>
-                        Traditional trials carry high uncertainty, slow recruitment,
-                        <br />
-                        <span className="whitespace-nowrap">
-                          and hard-to-control variability.
-                        </span>
-                      </>
-                    }
-                    descriptionClassName="max-w-xl"
+                    description="Traditional trials carry high uncertainty, slow recruitment,\nand hard-to-control variability."
+                    descriptionClassName="max-w-xl whitespace-pre-line"
                   />
                   <p className="text-base leading-relaxed">
                     Oncology trial planning has a narrow margin for error. One
