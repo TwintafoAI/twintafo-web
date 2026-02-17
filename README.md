@@ -1,3 +1,5 @@
+The ready website is at https://twintafoai.com.
+
 ## Twintafo AI Website
 
 Marketing site for Twintafo AI, built with Next.js (App Router).
@@ -46,6 +48,7 @@ Required for contact form delivery: `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP
 - Output: `.next`
 - Node: >= 20.11
 - Domains: `twintafoai.com` and `www.twintafoai.com` (set DNS to Vercel)
+- Live site: https://twintafoai.com
 
 The legacy nested folder `twintafo-web/` is ignored from deploys.
 
