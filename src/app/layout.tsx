@@ -20,19 +20,28 @@ export const metadata: Metadata = {
     "Twintafo AI builds AI-powered digital twins for oncology trials to simulate outcomes, test trial designs, and quantify risk before real-world enrollment.",
   metadataBase: new URL(siteUrl),
   openGraph: {
-    title: "Twintafo AI",
+    title: "Twintafo AI | Digital Twins for Oncology Trials",
     description:
-      "AI-powered digital twins for oncology trials. Simulate outcomes, stress-test design decisions, and evaluate external controls.",
+      "AI-powered digital twins for oncology trials. Curing cancer starts with better trials.",
     url: siteUrl,
     siteName: "Twintafo AI",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Twintafo AI | Digital Twins for Oncology Trials",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Twintafo AI",
+    title: "Twintafo AI | Digital Twins for Oncology Trials",
     description:
-      "AI-powered digital twins for oncology trials. Simulate outcomes before real patients are enrolled.",
+      "AI-powered digital twins for oncology trials. Curing cancer starts with better trials.",
+    images: ["/og-image.png"],
   },
 };
 
