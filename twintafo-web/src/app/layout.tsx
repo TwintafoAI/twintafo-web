@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   description:
     "Twintafo AI builds AI-powered digital twins for oncology trials to simulate outcomes, test trial designs, and quantify risk before real-world enrollment.",
   metadataBase: new URL("https://twintafoai.com"),
+  icons: {
+    icon: "/logo.png",
+  },
   openGraph: {
     title: "Twintafo AI",
     description:
