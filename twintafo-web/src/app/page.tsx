@@ -129,7 +129,7 @@ export default function Home() {
           <div className="flex items-center justify-between border-b border-emerald-100/10 py-4">
             <div className="flex items-center gap-3">
               <Image
-                src="/twintafo-logo.png"
+                src="/logo.png"
                 alt="Twintafo AI logo"
                 width={140}
                 height={36}
