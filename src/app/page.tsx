@@ -5,6 +5,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { HeroBackground } from "@/components/HeroBackground";
 import { Accordion } from "@/components/Accordion";
 import { FinalCtaGlow } from "@/components/FinalCtaGlow";
+import { ContactSuccessToast } from "@/components/ContactSuccessToast";
 
 const problemCards = [
   {
@@ -46,7 +47,7 @@ const featureBlocks = [
 
 const steps = [
   {
-    title: "Define assumptions",
+    title: "Define simulations",
     description: "Align on design, endpoints, and population profiles.",
   },
   {
@@ -136,7 +137,15 @@ const primaryCtaClasses =
 const secondaryCtaClasses =
   "inline-flex items-center justify-center rounded-full border border-emerald-200/30 px-6 py-3 text-sm font-semibold text-emerald-100/80 transition hover:border-emerald-200/70 hover:text-white";
 
-export default function Home() {
+type HomeProps = {
+  searchParams?: Promise<{ sent?: string; error?: string }>;
+};
+
+export default async function Home({ searchParams }: HomeProps) {
+  const resolvedSearchParams = searchParams ? await searchParams : undefined;
+  const showSuccess = resolvedSearchParams?.sent === "1";
+  const showError = resolvedSearchParams?.error === "1";
+
   return (
     <div className="min-h-screen bg-[#050807] text-white">
       <header className="fixed left-0 top-0 z-50 w-full border-b border-emerald-100/10 bg-black/40 backdrop-blur">
@@ -482,7 +491,7 @@ export default function Home() {
               />
             </Reveal>
             <Reveal delay={0.2}>
-              <div className="mt-10 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+              <div className="mt-10 grid items-start gap-8 lg:grid-cols-[1.1fr_0.9fr]">
                 <div className="rounded-3xl border border-emerald-100/10 bg-emerald-950/30 p-8">
                   <p className="text-sm uppercase tracking-[0.3em] text-emerald-200/70">
                     Deliverables may include
@@ -495,6 +504,10 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
+                  <p className="mt-6 text-sm leading-relaxed text-emerald-100/60">
+                    Every collaboration is tailored, with artifacts sized to your
+                    decision timeline and evidence needs.
+                  </p>
                 </div>
                 <div className="rounded-3xl border border-emerald-100/10 bg-black/30 p-8">
                   <p className="text-sm uppercase tracking-[0.3em] text-emerald-200/70">
@@ -566,7 +579,7 @@ export default function Home() {
               <div className="relative overflow-hidden rounded-3xl border border-emerald-200/20 bg-gradient-to-br from-emerald-300/10 via-black/60 to-emerald-400/10 px-8 py-16 text-center">
                 <FinalCtaGlow />
                 <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                  Bring timelines down. Keep rigor up.
+                  Build the trial before you run it.
                 </h2>
                 <p className="mt-4 text-base text-emerald-100/70">
                   Collaborate with Twintafo to pressure-test your next oncology
@@ -621,8 +634,35 @@ export default function Home() {
                 </div>
               </Reveal>
               <Reveal delay={0.15}>
-                <form className="rounded-3xl border border-emerald-100/10 bg-black/40 p-8 backdrop-blur">
+                <form
+                  action="/api/contact"
+                  method="post"
+                  className="rounded-3xl border border-emerald-100/10 bg-black/40 p-8 backdrop-blur"
+                >
                   <div className="grid gap-5">
+                    {showSuccess ? (
+                      <ContactSuccessToast
+                        initialVisible
+                        title="Thanks for reaching out. We’ve got your request."
+                        message="Expect a reply within 1–2 business days with next steps."
+                        variant="success"
+                      />
+                    ) : null}
+                    {showError ? (
+                      <ContactSuccessToast
+                        initialVisible
+                        title="We couldn’t send that just yet."
+                        message="Please try again, or email us directly at hello@twintafoai.com."
+                        variant="error"
+                      />
+                    ) : null}
+                    <input
+                      type="text"
+                      name="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      className="hidden"
+                    />
                     <div>
                       <label
                         htmlFor="contact-name"

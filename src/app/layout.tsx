@@ -12,16 +12,18 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://twintafoai.com";
+
 export const metadata: Metadata = {
   title: "Twintafo AI | Digital twins for oncology trials",
   description:
     "Twintafo AI builds AI-powered digital twins for oncology trials to simulate outcomes, test trial designs, and quantify risk before real-world enrollment.",
-  metadataBase: new URL("https://twintafoai.com"),
+  metadataBase: new URL(siteUrl),
   openGraph: {
     title: "Twintafo AI",
     description:
       "AI-powered digital twins for oncology trials. Simulate outcomes, stress-test design decisions, and evaluate external controls.",
-    url: "https://twintafoai.com",
+    url: siteUrl,
     siteName: "Twintafo AI",
     locale: "en_US",
     type: "website",

@@ -23,6 +23,7 @@
 # misc
 .DS_Store
 *.pem
+twintafo-web/
 
 # debug
 npm-debug.log*
