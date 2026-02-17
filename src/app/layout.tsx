@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 const canonicalUrl = "https://www.twintafoai.com";
-const ogImageUrl = `${canonicalUrl}/og-image.png`;
+const ogImageUrl = `${canonicalUrl}/og-image.png?v=3`;
 
 export const metadata: Metadata = {
   title: "Twintafo AI | Digital twins for oncology trials",
@@ -53,7 +53,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" prefix="og: http://ogp.me/ns#">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
