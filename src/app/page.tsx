@@ -132,6 +132,20 @@ const faqItems = [
   },
 ];
 
+const LINKEDIN_URL = "https://www.linkedin.com/company/twintafo-ai/";
+
+const LinkedInIcon = ({ className }: { className?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className={className}
+    aria-hidden
+  >
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+  </svg>
+);
+
 const primaryCtaClasses =
   "inline-flex items-center justify-center rounded-full bg-emerald-300 px-6 py-3 text-sm font-semibold text-emerald-950 transition hover:bg-emerald-200";
 const secondaryCtaClasses =
@@ -609,6 +623,16 @@ export default async function Home({ searchParams }: HomeProps) {
                       >
                         hello@twintafoai.com
                       </a>
+                      <span className="mx-2">·</span>
+                      <a
+                        href={LINKEDIN_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-emerald-200 underline underline-offset-4 transition hover:text-emerald-100"
+                      >
+                        <LinkedInIcon className="h-4 w-4" />
+                        Follow us on LinkedIn
+                      </a>
                     </div>
                     <div className="rounded-2xl border border-emerald-200/20 bg-black/40 p-6 text-sm text-emerald-100/70">
                       <p className="text-xs uppercase tracking-[0.3em] text-emerald-200/70">
@@ -732,9 +756,21 @@ export default async function Home({ searchParams }: HomeProps) {
 
       <footer className="border-t border-emerald-100/10 py-8">
         <Container>
-          <div className="flex flex-col gap-3 text-xs text-emerald-100/50 md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-col gap-4 text-xs text-emerald-100/50 md:flex-row md:items-center md:justify-between">
             <span>© 2026 Twintafo AI. All rights reserved.</span>
-            <span>AI-powered digital twins for oncology trials.</span>
+            <div className="flex flex-wrap items-center gap-4">
+              <span>AI-powered digital twins for oncology trials.</span>
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-emerald-200/80 transition hover:text-emerald-200"
+                aria-label="Follow Twintafo AI on LinkedIn"
+              >
+                <LinkedInIcon className="h-4 w-4" />
+                Follow us on LinkedIn
+              </a>
+            </div>
           </div>
         </Container>
       </footer>
