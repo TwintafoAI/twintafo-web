@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,20 +13,20 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const canonicalUrl = "https://www.twintafoai.com";
-const ogImageUrl = `${canonicalUrl}/og-image.png?v=3`;
+const baseUrl = "https://www.twintafoai.com";
+const ogImageUrl = `${baseUrl}/Twintafo-web_photo_header.png`;
 
 export const metadata: Metadata = {
   title: "Twintafo AI | Digital twins for oncology trials",
   description:
     "Twintafo AI builds AI-powered digital twins for oncology trials to simulate outcomes, test trial designs, and quantify risk before real-world enrollment.",
-  metadataBase: new URL(canonicalUrl),
-  alternates: { canonical: canonicalUrl },
+  metadataBase: new URL(baseUrl),
+  alternates: { canonical: baseUrl },
   openGraph: {
     title: "Twintafo AI",
     description:
       "AI-powered digital twins for oncology trials. Curing cancer starts with better trials.",
-    url: canonicalUrl,
+    url: baseUrl,
     siteName: "Twintafo AI",
     locale: "en_US",
     type: "website",
@@ -58,6 +59,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
