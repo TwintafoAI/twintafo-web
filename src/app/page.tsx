@@ -187,7 +187,7 @@ export default async function Home({ searchParams }: HomeProps) {
                 href={LINKEDIN_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-emerald-200/30 text-emerald-200/90 transition hover:border-emerald-200/70 hover:bg-emerald-200/10 hover:text-emerald-200"
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-300 text-emerald-950 transition hover:bg-emerald-200"
                 aria-label="Follow Twintafo AI on LinkedIn"
               >
                 <LinkedInIcon className="h-5 w-5" />
