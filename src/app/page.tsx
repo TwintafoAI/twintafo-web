@@ -182,13 +182,24 @@ export default async function Home({ searchParams }: HomeProps) {
                 <span className="text-ai-gradient">AI</span>
               </span>
             </div>
-            <div className="hidden items-center gap-3 md:flex">
-              <a href="#contact" className={primaryCtaClasses}>
-                Request a call
+            <div className="flex items-center gap-3">
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-emerald-200/30 text-emerald-200/90 transition hover:border-emerald-200/70 hover:bg-emerald-200/10 hover:text-emerald-200"
+                aria-label="Follow Twintafo AI on LinkedIn"
+              >
+                <LinkedInIcon className="h-5 w-5" />
               </a>
-              <a href="#contact" className={secondaryCtaClasses}>
-                Contact us
-              </a>
+              <div className="hidden items-center gap-3 md:flex">
+                <a href="#contact" className={primaryCtaClasses}>
+                  Request a call
+                </a>
+                <a href="#contact" className={secondaryCtaClasses}>
+                  Contact us
+                </a>
+              </div>
             </div>
           </div>
         </Container>
